@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "host-api-service/pkg/api";
+
+service Traveler {
+    rpc Node(NodeRequest) returns (NodeResponse);
+    rpc Delete(DockerRequest) returns(DockerResponse);
+    rpc NodeGPUInfo(Request) returns(NodeGPUResponse);
+}
+
+message NodeRequest {
+    string clusterName = 1;
+}
+
+message NodeResponse {
+    string ClusterName = 1;
+    string NodeName = 2;
+    int32 GPU = 3;
+}
+
+message DockerRequest {
+    string dockerid = 1;
+}
+
+message DockerResponse {
+}
+
+message Request {
+}
+
+message NodeGPUResponse {
+    int32 total_gpu_count = 1;
+    map<string, int32> index_uuid_map = 2;
+    repeated NVLink nvlink_info = 3;
+}
+
+
+message NVLink {
+    string gpu1uuid = 1;
+    string gpu2uuid = 2;
+    int32 lanecount = 3;
+}
