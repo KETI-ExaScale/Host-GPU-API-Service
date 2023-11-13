@@ -1,0 +1,10 @@
+[Unit]
+Description=Exascale HostAPIService
+Documentation=https://github.com/KETI-ExaScale/Host-GPU-API-Service.git
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/local/.keti/host-gpu-api-service
+
+[Install]
+WantedBy=multi-user.target

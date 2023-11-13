@@ -1,4 +1,4 @@
 #!/bin/bash
 systemctl daemon-reload
-systemctl restart host-api-service
-systemctl enable host-api-service
+systemctl restart host-gpu-api-service
+systemctl enable host-gpu-api-service

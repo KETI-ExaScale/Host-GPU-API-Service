@@ -14,7 +14,7 @@ for node in "${!node_ip_mapping[@]}"; do
         ./2.add-service.sh
         ./3.start.sh
     else
-        ssh root@${node_ip_mapping[$node]} "cd /home/host-api-service && bash ./2.add-service.sh"
-        ssh root@${node_ip_mapping[$node]} "cd /home/host-api-service && bash ./3.start.sh"
+        ssh root@${node_ip_mapping[$node]} "cd /home/host-gpu-api-service && bash ./2.add-service.sh"
+        ssh root@${node_ip_mapping[$node]} "cd /home/host-gpu-api-service && bash ./3.start.sh"
     fi
 done

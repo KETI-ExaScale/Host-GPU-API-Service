@@ -13,8 +13,8 @@ for node in "${!node_ip_mapping[@]}"; do
     if [ "$node" == "c1-master" ]; then
         continue
     else
-        scp -r ./build root@${node_ip_mapping[$node]}:/home/host-api-service
-        scp "2.add-service.sh" root@${node_ip_mapping[$node]}:/home/host-api-service
-        scp "3.start.sh" root@${node_ip_mapping[$node]}:/home/host-api-service
+        scp -r ./build root@${node_ip_mapping[$node]}:/home/host-gpu-api-service
+        scp "2.add-service.sh" root@${node_ip_mapping[$node]}:/home/host-gpu-api-service
+        scp "3.start.sh" root@${node_ip_mapping[$node]}:/home/host-gpu-api-service
     fi
 done

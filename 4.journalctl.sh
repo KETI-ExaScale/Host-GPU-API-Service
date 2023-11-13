@@ -1,2 +1,2 @@
 #!/bin/bash
-journalctl -u host-api-service
+journalctl -u host-gpu-api-service
